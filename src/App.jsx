@@ -3,19 +3,21 @@ import Header from "./components/Header";
 import Home from "./Pages/Home";
 import PostDetails from "./Pages/Postdetails";
 import Feedback from "./Pages/Feedback";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50">
         <Header />
-        <main className="max-w-5xl mx-auto px-4 py-8">
+           <main className="flex-1 flex flex-col px-4 py-8 max-w-5xl mx-auto w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/post/:id" element={<PostDetails />} />
             <Route path="/feedback" element={<Feedback />} />
           </Routes>
         </main>
+        <Footer/>
       </div>
     </BrowserRouter>
   );
